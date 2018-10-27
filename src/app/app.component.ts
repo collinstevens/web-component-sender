@@ -6,5 +6,5 @@ import { Component, OnChanges, SimpleChanges } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  value = '';
+  value = 'default value';
 }

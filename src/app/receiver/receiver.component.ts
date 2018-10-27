@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 
 @Component({
   selector: 'app-receiver',
@@ -6,6 +6,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./receiver.component.scss']
 })
 export class ReceiverComponent {
-  @Input()
-  myValue: string | undefined = undefined;
+  @HostBinding('attr.my-value')
+  myValue: string | undefined = 'attr default';
 }
