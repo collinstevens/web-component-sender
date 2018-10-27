@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Injector, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { createCustomElement, NgElementConfig } from '@angular/elements';
 import { FormsModule } from '@angular/forms';
-import { ElementZoneStrategyFactory } from 'elements-zone-strategy';
 
 import { AppComponent } from './app.component';
 import { ReceiverComponent } from './receiver/receiver.component';
@@ -16,14 +15,8 @@ import { ReceiverComponent } from './receiver/receiver.component';
 })
 export class AppModule {
   constructor(private injector: Injector) {
-    const strategyFactory = new ElementZoneStrategyFactory(
-      ReceiverComponent,
-      this.injector
-    );
-
     const config: NgElementConfig = {
-      injector: this.injector,
-      strategyFactory: strategyFactory
+      injector: this.injector
     };
 
     const receiverElement = createCustomElement(ReceiverComponent, config);
